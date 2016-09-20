@@ -16,7 +16,7 @@ Main features
  
 Browser support
 ---
-lightgallery supports all major browsers including IE 9 and above..
+lightgallery supports all major browsers including IE 8 and above..
 
 
 Installation
