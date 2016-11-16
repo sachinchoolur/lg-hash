@@ -40,6 +40,9 @@ $ npm install lg-hash
 
 You can also directly download lg-hash from github.
 
+#### CDN
+If you prefer to use a CDN you can load files via [jsdelivr](https://www.jsdelivr.com/projects/lg-hash)
+
 #### Include Javascript files
 Include lg-hash plugin after lightgallery.min.js.
 ``` html
