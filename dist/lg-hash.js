@@ -1,6 +1,6 @@
-/*! lg-hash - v1.0.1 - 2016-09-30
+/*! lg-hash - v1.0.2 - 2017-06-03
 * http://sachinchoolur.github.io/lightGallery
-* Copyright (c) 2016 Sachin N; Licensed GPLv3 */
+* Copyright (c) 2017 Sachin N; Licensed GPLv3 */
 
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
@@ -46,7 +46,11 @@
 
         // Change hash value on after each slide transition
         _this.core.$el.on('onAfterSlide.lg.tm', function(event, prevIndex, index) {
-            window.location.hash = 'lg=' + _this.core.s.galleryId + '&slide=' + index;
+            if (history.replaceState) {
+                history.replaceState(null, null, '#lg=' + _this.core.s.galleryId + '&slide=' + index);
+            } else {
+                window.location.hash = 'lg=' + _this.core.s.galleryId + '&slide=' + index;
+            }
         });
 
         // Listen hash change and change the slide according to slide value
@@ -72,10 +76,14 @@
 
         // Reset to old hash value
         if (this.oldHash && this.oldHash.indexOf('lg=' + this.core.s.galleryId) < 0) {
-            window.location.hash = this.oldHash;
+            if (history.replaceState) {
+                history.replaceState(null, null, this.oldHash);
+            } else {
+                window.location.hash = this.oldHash;
+            }
         } else {
-            if (history.pushState) {
-                history.pushState('', document.title, window.location.pathname + window.location.search);
+            if (history.replaceState) {
+                history.replaceState(null, document.title, window.location.pathname + window.location.search);
             } else {
                 window.location.hash = '';
             }
@@ -88,6 +96,5 @@
     $.fn.lightGallery.modules.hash = Hash;
 
 })();
-
 
 }));

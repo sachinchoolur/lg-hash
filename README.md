@@ -16,7 +16,7 @@ Main features
  
 Browser support
 ---
-lightgallery supports all major browsers including IE 8 and above..
+lightgallery Hash plugin supports all major browsers including IE 10 and above..
 
 
 Installation
