@@ -1,6 +1,6 @@
 {
   "name": "lg-hash",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "History(Hash) module for lightgallery.",
   "main": [
     "dist/lg-hash.min.js"
