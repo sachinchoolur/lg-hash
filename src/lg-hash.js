@@ -30,7 +30,7 @@
             var slideName = _this.core.s.dynamic ? _this.core.s.dynamicEl[index].slideName : _this.core.$items.eq(index).data('slideName');
             slideName = _this.core.s.customSlideName ? slideName : index;
             if (history.replaceState) {
-                history.replaceState(null, null, window.location.pathname + '#lg=' + _this.core.s.galleryId + '&slide=' + slideName);
+                history.replaceState(null, null, window.location.pathname + window.location.search + '#lg=' + _this.core.s.galleryId + '&slide=' + slideName);
             } else {
                 window.location.hash = 'lg=' + _this.core.s.galleryId + '&slide=' + slideName;
             }
